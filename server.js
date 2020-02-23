@@ -1,0 +1,13 @@
+const port = process.env.port || 5000;
+const express = require('express');
+const app = express();
+const passport = require('passport');
+const passportConfig = require('./config/passportConfig');
+const routes = require('./routers');
+const initConfig = require('./config/initConfig');
+const connectDatabase = require('./config/connectDatabase');
+initConfig(passport.initialize(), app);
+connectDatabase();
+passportConfig(passport);
+routes(app);
+app.listen(port, ()=> console.log(`Listening on port ${port}...`));

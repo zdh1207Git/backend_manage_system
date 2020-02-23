@@ -1,7 +1,10 @@
 const bodyParser = require('body-parser');
+const passport = require('passport');
+const passportConfig = require('./passportConfig');
 
-module.exports = (passportInitialize, app) => {
+module.exports = (app) => {
   app.use(bodyParser.urlencoded({extended: false}));
   app.use(bodyParser.json());
-  app.use(passportInitialize);
+  app.use(passport.initialize());
+  passportConfig(passport);
 }

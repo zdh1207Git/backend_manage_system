@@ -4,6 +4,19 @@
   </div>
 </template>
 
+<script>
+import storeTokenToStore from './lib/storeTokenToStore';
+
+export default {
+  name: "app",
+  created() {
+    if (localStorage.eleToken) storeTokenToStore(this.$store, localStorage.eleToken)
+  }
+}
+</script>
+
+
+
 <style>
 html,
 body,

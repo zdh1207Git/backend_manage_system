@@ -38,6 +38,8 @@
 </template>
 
 <script>
+import storeTokenToLocalStorageAndStore from '../lib/storeTokenToLocalStorageAndStore'
+
 export default {
   name: "register",
   data() {
@@ -98,7 +100,9 @@ export default {
                 message: "注册成功！",
                 type: "success"
               });
-              this.$router.push("/login");
+              const token = res.data.token;
+              storeTokenToLocalStorageAndStore(this.$store, localStorage, token)
+              this.$router.push("/");
             });
         } else {
           console.log("error submit!!");

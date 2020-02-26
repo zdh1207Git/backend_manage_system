@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import storeTokenToLocalStorageAndStore from '../lib/storeTokenToLocalStorageAndStore'
+import {storeTokenToLocalStorageAndStore} from '../lib/storeToken'
 export default {
   name: "login",
   data() {

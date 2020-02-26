@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import storeTokenToStore from './lib/storeTokenToStore';
+import {storeTokenToStore} from './lib/storeToken';
 
 export default {
   name: "app",

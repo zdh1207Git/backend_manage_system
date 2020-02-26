@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import storeTokenToLocalStorageAndStore from '../lib/storeTokenToLocalStorageAndStore'
+import {storeTokenToLocalStorageAndStore} from '../lib/storeToken'
 
 export default {
   name: "register",
@@ -100,7 +100,7 @@ export default {
                 message: "注册成功！",
                 type: "success"
               });
-              const token = res.data.token;
+              const {token} = res.data;
               storeTokenToLocalStorageAndStore(this.$store, localStorage, token)
               this.$router.push("/");
             });

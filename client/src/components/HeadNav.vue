@@ -10,7 +10,7 @@
             <img :src="user.avatar" alt="" class = 'avatar'> 
             <div class="welcome">
               <p class = "name comename">欢迎</p>
-              <p class="name avatarname">{{user.name}}.Wu</p>
+              <p class="name avatarname">{{user.name}}</p>
             </div>
             <span class = 'username'>
               <el-dropdown trigger = "click" @command ="SetDialogInfo">
@@ -50,7 +50,7 @@
       },
       showInfoList() {
         console.log(this.user.name)
-        this.$router.push('/user/infoshow')
+        this.$router.push('/infoshow')
       },
       logout() {
         localStorage.removeItem('eleToken');

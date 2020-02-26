@@ -1,17 +1,21 @@
 <template>
   <div class="index">
-    <HeadNav></HeadNav>
-    <router-view/>
+    <HeadNav/>
+    <LeftMenu/>
+    <div class = 'rightContainer'>
+      <router-view/>
+    </div>
   </div>
 </template>
 
 <script>
 import HeadNav from '../components/HeadNav'
+import LeftMenu from '../components/LeftMenu'
 
 export default {
   name: 'index',
   components: {
-    HeadNav,
+    HeadNav, LeftMenu
   }
 }
 </script>
@@ -21,6 +25,16 @@ export default {
   width: 100%;
   height: 100%;
   overflow: hidden;
+}
+
+.rightContainer {
+  position: relative;
+  top: 0;
+  left: 180px;
+  width: calc(100% - 180px);
+  height: calc(100% - 7px);
+  overflow: auto;
+
 }
 
 </style>

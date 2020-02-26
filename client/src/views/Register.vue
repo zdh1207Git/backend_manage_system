@@ -96,13 +96,20 @@ export default {
             .post("/api/users/register", this.registerUser)
             .then(res => {
               // 注册成功
-              this.$message({
-                message: "注册成功！",
-                type: "success"
-              });
-              const {token} = res.data;
-              storeTokenToLocalStorageAndStore(this.$store, localStorage, token)
-              this.$router.push("/");
+              const {token, email} = res.data
+              if (token) {
+                this.$message({
+                  message: "注册成功！",
+                  type: "success"
+                });
+                storeTokenToLocalStorageAndStore(this.$store, localStorage, token)
+                return this.$router.push("/user/infoShow");
+              }; 
+              if (email) {
+                this.$message({
+                  message: email,
+                })
+              }
             });
         } else {
           console.log("error submit!!");

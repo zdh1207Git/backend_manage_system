@@ -94,7 +94,7 @@ export default {
           //表单数据验证完成之后，提交数据;
           const url =
             this.dialog.option == "add" ? "add" : `edit/${this.form.id}`;
-          this.$axios.post(`/api/profile/${url}`, this.form).then(res => {
+          this.$axios.post(`/api/profiles/${url}`, this.form).then(res => {
             // 操作成功
             this.$message({
               message: "保存成功！",

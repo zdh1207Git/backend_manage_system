@@ -1,6 +1,6 @@
 <template>
   <div class="fillcontain">
-    <!-- <div>
+    <div>
       <el-form :inline="true" ref="search_data" :model="search_data">
         <el-form-item label="投标时间筛选:">
           <el-date-picker v-model="search_data.startTime" type="datetime" placeholder="选择开始时间"></el-date-picker>--
@@ -8,7 +8,7 @@
         </el-form-item>
         <el-form-item>
           <el-button type="primary" size="small" icon="search" @click="onScreeoutMoney()">筛选</el-button>
-        </el-form-item>
+        </el-form-item
         <el-form-item class="btnRight">
           <el-button
             type="primary"
@@ -19,7 +19,7 @@
           >添加</el-button>
         </el-form-item>
       </el-form>
-    </div> -->
+    </div>
     <div class="table_container">
       <el-table
         v-if="tableData.length > 0"
@@ -150,10 +150,10 @@ export default {
       // 获取表格数据
       this.$axios("/api/profiles").then(res => {
         this.tableData = res.data;
-        // this.allTableData = res.data;
-        // this.filterTableData = res.data;
+        this.allTableData = res.data;
+        this.filterTableData = res.data;
         // 设置分页数据
-        // this.setPaginations();
+        this.setPaginations();
       });
     },
     onEditMoney(row) {

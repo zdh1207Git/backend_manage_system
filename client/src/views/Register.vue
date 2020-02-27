@@ -103,7 +103,7 @@ export default {
                   type: "success"
                 });
                 storeTokenToLocalStorageAndStore(this.$store, localStorage, token)
-                return this.$router.push("/user/infoShow");
+                return this.$router.push("/infoShow");
               }; 
               if (email) {
                 this.$message({
